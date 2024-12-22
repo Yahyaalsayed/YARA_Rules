@@ -2,11 +2,11 @@ rule rhadamanthys
 {
     meta:
 		    author = "Yahya Alsify"
-        	description = "Detects Rhadamanthya loader"
-        	hash1 = "ee3fe7d514c1c8612015a0a9b6a4b504c2bedbd7050b401636f8c0eaef4ac0b3"
-			hash2 = "cf1c65dbc78752ec240cc82b8630dec062d91ed939e68db068993c5b1023071e"
-			hash3 = "cf1c65dbc78752ec240cc82b8630dec062d91ed939e68db068993c5b1023071e"
-			hash4 = "1f42c9d833bf800b384a80424dd05f50d597dc3566856f245156fb266a40c797"
+        	    description = "Detects Rhadamanthya loader"
+        	    hash1 = "ee3fe7d514c1c8612015a0a9b6a4b504c2bedbd7050b401636f8c0eaef4ac0b3"
+	            hash2 = "cf1c65dbc78752ec240cc82b8630dec062d91ed939e68db068993c5b1023071e"
+		    hash3 = "cf1c65dbc78752ec240cc82b8630dec062d91ed939e68db068993c5b1023071e"
+		    hash4 = "1f42c9d833bf800b384a80424dd05f50d597dc3566856f245156fb266a40c797"
 
     strings:
           $s1 = {81 3E 21 52 48 59}   // "YHR!"
@@ -14,7 +14,6 @@ rule rhadamanthys
           $s3 = "HTTP/1.1\r\nHost:"
           $s4 = "prepare.bin"
           $s5 = "xss-protection"
-
           $s6 = {25 00 25 00 54 00 45 00 4D 00 50 00 25 00 25 00}    // "%%TEMP%%\nsis_uns%04x.dll"
           $s7 = {20 00 22 00 25 00 73 00 22 00 2C 00 50 00 72 00}    // "PrintUIEntry"
           $s8 = "keep-alive"
